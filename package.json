@@ -1,0 +1,20 @@
+{
+  "name": "s3-file-procesing",
+  "description": "Simple example that shows how to act on S3 events",
+  "version": "1.0.0",
+  "private": true,
+  "files": [
+    "*.js"
+  ],
+  "scripts": {
+    "start": "claudia create --name s3-processing --region us-east-1 --handler main.handler",
+    "test": "claudia test-lambda",
+    "deploy": "claudia update"
+  },
+  "devDependencies": {
+    "claudia": "^4"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.6.4"
+  }
+}

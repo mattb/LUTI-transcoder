@@ -1,0 +1,7 @@
+{
+  "lambda": {
+    "role": "s3-processing-executor",
+    "name": "s3-processing",
+    "region": "us-east-1"
+  }
+}

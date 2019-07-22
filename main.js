@@ -12,9 +12,9 @@ exports.handler = (event, context) => {
     ) {
       convert(eventRecord.s3.object.key, (error, data) => {
         if (error) {
-          context.fail(error);
+          context.fail(JSON.stringify(error));
         } else {
-          context.done(data);
+          context.done(JSON.stringify(data));
         }
       });
     } else {

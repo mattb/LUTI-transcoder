@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "start": "claudia create --name s3-processing --region us-east-1 --handler main.handler",
-    "register": "claudia add-s3-event-source --bucket lifeundertheice-raw",
+    "register": "claudia add-s3-event-source --bucket lifeundertheice-raw ; claudia add-s3-event-source --bucket lifeundertheice",
     "test": "claudia test-lambda",
     "deploy": "claudia update"
   },

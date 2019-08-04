@@ -38,7 +38,8 @@ module.exports = callback => {
           Bucket: 'lifeundertheice',
           Key: 'm3u8.json',
           Body: JSON.stringify(playlist),
-          ContentType: 'application/json'
+          ContentType: 'application/json',
+          ACL: 'public-read'
         },
         callback
       );

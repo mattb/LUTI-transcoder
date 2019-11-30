@@ -11,11 +11,25 @@ module.exports = (fileKey, callback) => {
     Key: fileKey
   };
 
+  const outputKey = fileKey.replace(/\.mp4$/, '');
   const Output = {
     PresetId,
-    SegmentDuration: '5.0',
-    Key: fileKey.replace(/\.mp4$/, '')
+    SegmentDuration: '1.0',
+    Key: outputKey,
+    ThumbnailPattern: fileKey.replace(/\.mp4$/, '-{count}')
   };
 
-  elastictranscoder.createJob({ PipelineId, Input, Output }, callback);
+  const Playlists = [
+    {
+      'Format':'HLSv4',
+      Name: outputKey,
+      'OutputKeys':[
+         outputKey
+    }
+  ];
+
+  elastictranscoder.createJob(
+    { PipelineId, Input, Output, Playlists },
+    callback
+  );
 };

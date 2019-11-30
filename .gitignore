@@ -23,3 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 idtag-writer-app-darwin-x64
 release-builds
+validation_data.json

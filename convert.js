@@ -2,7 +2,7 @@
 const aws = require('aws-sdk');
 
 const PipelineId = '1548039311520-hhiw1e';
-const PresetId = '1569302061448-7wrs9a';
+const PresetId = '1575096974967-o3cmgx';
 
 module.exports = (fileKey, callback) => {
   const elastictranscoder = new aws.ElasticTranscoder({ region: 'us-east-1' });

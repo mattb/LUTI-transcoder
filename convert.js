@@ -21,10 +21,9 @@ module.exports = (fileKey, callback) => {
 
   const Playlists = [
     {
-      'Format':'HLSv4',
+      Format: 'HLSv4',
       Name: outputKey,
-      'OutputKeys':[
-         outputKey
+      OutputKeys: [outputKey]
     }
   ];
 

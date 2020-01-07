@@ -1,10 +1,10 @@
 /* global require, module */
-const aws = require('aws-sdk');
+const aws = require("aws-sdk");
 
-const s3 = new aws.S3({ region: 'us-east-1' });
+const s3 = new aws.S3({ region: "us-east-1" });
 
 const listAllKeys = params => {
-  const p = { Bucket: 'lifeundertheice' };
+  const p = { Bucket: "lifeundertheice" };
   if (params) {
     Object.assign(p, params);
   }
@@ -13,7 +13,7 @@ const listAllKeys = params => {
       .promise()
       .then(data => {
         const ks = data.Contents.map(d => d.Key).filter(k =>
-          k.endsWith('.m3u8')
+          k.endsWith(".m3u8")
         );
         if (!data.IsTruncated) {
           resolve(ks);
@@ -35,11 +35,11 @@ module.exports = callback => {
       };
       s3.putObject(
         {
-          Bucket: 'lifeundertheice',
-          Key: 'm3u8.json',
+          Bucket: "lifeundertheice",
+          Key: "m3u8.json",
           Body: JSON.stringify(playlist),
-          ContentType: 'application/json',
-          ACL: 'public-read'
+          ContentType: "application/json",
+          ACL: "public-read"
         },
         callback
       );

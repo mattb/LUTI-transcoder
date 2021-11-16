@@ -27,7 +27,7 @@
     "prettier-eslint": "^9.0.1"
   },
   "dependencies": {
-    "aws-sdk": "^2.496.0",
+    "aws-sdk": "^2.814.0",
     "fluent-ffmpeg": "^2.1.2"
   }
 }
